@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_input_widgets/views/text_form_field_kullanimi.dart';
 import 'package:flutter_input_widgets/views/textfield_islemleri.dart';
 import 'package:flutter_input_widgets/widgets/sayfa_gecis.dart';
 
@@ -18,6 +19,8 @@ class MyHomePage extends StatelessWidget {
               SayfaGecisButton(
                   buttonAdi: "TextField Islemleri",
                   sayfa: TextFieldIslemleri()),
+              SayfaGecisButton(
+                  buttonAdi: "TextFormField", sayfa: TextFormFieldKullanimi()),
             ],
           ),
         ));
