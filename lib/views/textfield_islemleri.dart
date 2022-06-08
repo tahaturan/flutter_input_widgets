@@ -8,6 +8,37 @@ class TextFieldIslemleri extends StatefulWidget {
 }
 
 class _TextFieldIslemleriState extends State<TextFieldIslemleri> {
+  late TextEditingController _kullaniciAdiKontrol;
+  late FocusNode _focusNode;
+  late int maxLineCount = 1;
+  @override
+  void initState() {
+    //*ekrana yazilmadan once calsitirilan yapidir genelde atamalari initState icinde yapariz
+    super.initState();
+    _kullaniciAdiKontrol = TextEditingController(text: "Kullanici Adi");
+    _focusNode = FocusNode();
+    _focusNode.addListener(() {
+      //*yapilan degisikleri Dinler
+      setState(() {
+        if (_focusNode.hasFocus) {
+          //*eger odak ondaysa
+          maxLineCount = 3; //*satirsaysini 3 e cikar
+        } else {
+          maxLineCount = 1; //*degilse 1 indir
+        }
+      });
+    });
+    //*ilk atanan deger
+  }
+
+  @override
+  void dispose() {
+    _kullaniciAdiKontrol.dispose();
+    _focusNode.dispose();
+    super.dispose();
+    //*burda da ise yok etme islemi yoksa bellekte kalir ve gereksiz yer kaplar
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -19,13 +50,16 @@ class _TextFieldIslemleriState extends State<TextFieldIslemleri> {
           Padding(
             padding: const EdgeInsets.all(20.0),
             child: TextField(
+              focusNode: _focusNode,
+              controller: _kullaniciAdiKontrol,
               keyboardType: TextInputType.number, //*Klavye Stilimizi Belirler
               textInputAction: TextInputAction.done,
               //*kalvye acildiginda ilerimi yoksa okeylemisin felan onlari degistiyor
               autofocus: true,
               //* sayfa acildiginda ilk olarak burasi acilacaktir islem girmesi icin
-              maxLines: 1, //* 1 satirlik veri girilmesi icin yer olusturur
-              maxLength: 20, //* maximum karakter sayisini belirleriz
+              maxLines:
+                  maxLineCount, //* 1 satirlik veri girilmesi icin yer olusturur
+              maxLength: 50, //* maximum karakter sayisini belirleriz
               onChanged: (String deger) {
                 //*burasi inputa girilen degeleri alir ve bize verir mesela arama islemlerinde felann kullabiliriz
                 //! Basilan Her karakteri Alir
@@ -48,10 +82,15 @@ class _TextFieldIslemleriState extends State<TextFieldIslemleri> {
               ),
             ),
           ),
+          Text(_kullaniciAdiKontrol.text),
         ],
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          setState(() {
+            _kullaniciAdiKontrol.text = "Buttondan Gelen Hazir Veri";
+          });
+        },
         child: const Icon(Icons.edit),
       ),
     );
