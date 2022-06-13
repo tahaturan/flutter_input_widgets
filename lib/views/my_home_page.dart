@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_input_widgets/views/drawer_kullanimi.dart';
 import 'package:flutter_input_widgets/views/global_key_kullanimi.dart';
 import 'package:flutter_input_widgets/views/stepper_kullanimi.dart';
 import 'package:flutter_input_widgets/views/text_form_field_kullanimi.dart';
@@ -26,6 +27,8 @@ class MyHomePage extends StatelessWidget {
                 buttonAdi: "Global Key Kullanimi", sayfa: GlobalKeyKullanimi()),
             SayfaGecisButton(
                 buttonAdi: "Stepper Kullanimi", sayfa: StepperKullanimi()),
+            SayfaGecisButton(
+                buttonAdi: "Drawer Kullanimi", sayfa: const DrawerKullanimi()),
           ],
         ),
       ),
