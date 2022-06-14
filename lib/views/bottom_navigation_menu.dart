@@ -31,7 +31,9 @@ class _BottomNavMenuState extends State<BottomNavMenu> {
             label: "Search",
             backgroundColor: Colors.red),
         BottomNavigationBarItem(
-            icon: Icon(Icons.add), label: "Add", backgroundColor: Colors.green),
+            icon: Icon(Icons.info),
+            label: "Info",
+            backgroundColor: Colors.green),
         BottomNavigationBarItem(
           icon: Icon(Icons.person),
           label: "Profile",

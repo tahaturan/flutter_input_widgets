@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_input_widgets/screen/page_one.dart';
-import 'package:flutter_input_widgets/screen/page_three.dart';
 import 'package:flutter_input_widgets/screen/page_two.dart';
 import 'package:flutter_input_widgets/views/bottom_navigation_menu.dart';
+import 'package:flutter_input_widgets/views/expansiontile_kullanimi.dart';
 import 'package:flutter_input_widgets/widgets/home_page.dart';
 
 class MyHomePage extends StatefulWidget {
@@ -17,7 +17,7 @@ class _MyHomePageState extends State<MyHomePage> {
   static const List<Widget> pageList = [
     HomePage(),
     PageTwo(),
-    PageThree(),
+    ExpansionTileKullanimi(),
     PageFour(),
   ];
 
@@ -30,6 +30,7 @@ class _MyHomePageState extends State<MyHomePage> {
       body: pageList.elementAt(secilenMenuItem),
       bottomNavigationBar: BottomNavMenu(secilenMenuItem: (int gelenDeger) {
         secilenMenuItem = gelenDeger;
+        setState(() {});
       }),
     );
   }
