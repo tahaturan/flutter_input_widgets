@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_input_widgets/views/page_view_kullanimi.dart';
 import 'package:flutter_input_widgets/widgets/sayfa_gecis.dart';
 
 import '../views/drawer_kullanimi.dart';
@@ -26,6 +27,9 @@ class HomePage extends StatelessWidget {
               buttonAdi: "Stepper Kullanimi", sayfa: StepperKullanimi()),
           SayfaGecisButton(
               buttonAdi: "Drawer Kullanimi", sayfa: const DrawerKullanimi()),
+          SayfaGecisButton(
+              buttonAdi: "PageView Kullanimi",
+              sayfa: const PageViewKullanimi()),
         ],
       ),
     );

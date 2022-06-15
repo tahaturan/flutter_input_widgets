@@ -23,3 +23,7 @@
 #### ExpansionTile Kullanimi
 <img src ="images/expansiontile.gif" height = 300>
 <hr>
+
+#### PageView Kullanimi
+<img src ="images/pageviewkullanimi.gif" height = 300>
+<hr>
