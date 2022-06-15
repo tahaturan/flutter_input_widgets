@@ -27,3 +27,7 @@
 #### PageView Kullanimi
 <img src ="images/pageviewkullanimi.gif" height = 300>
 <hr>
+
+#### Tabbar & TabbarView Kullanimi
+<img src ="images/tabbarkullanimi.gif" height = 300>
+<hr>

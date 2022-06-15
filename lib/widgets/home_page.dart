@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_input_widgets/views/page_view_kullanimi.dart';
+import 'package:flutter_input_widgets/views/tabbar_tabbarview_kullanimi.dart';
 import 'package:flutter_input_widgets/widgets/sayfa_gecis.dart';
 
 import '../views/drawer_kullanimi.dart';
@@ -30,6 +31,9 @@ class HomePage extends StatelessWidget {
           SayfaGecisButton(
               buttonAdi: "PageView Kullanimi",
               sayfa: const PageViewKullanimi()),
+          SayfaGecisButton(
+              buttonAdi: "Tabbar & TabbarView",
+              sayfa: const TabbarTabbarViewKullanimi()),
         ],
       ),
     );
